@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+<style>
+    label {display:inline-block;}
+</style>
+{% block main %}
+
+<br> <br>
+<div class="container-fluid content">
+    <div class="row">
+        <div class="col" id="banner">
+            <div class="col-sm-6 col-lg-6 col" id="rental"> <br>
+                <div class="row"> <br>
+                    <div class="col-sm-12 col-lg-12 col"> <br> <br>
+                        <div class="panel"> <br>
+                            <div class="panel-heading"><center><b style="color:black;">Rentals</b></center></div>
+                            <p><center>Rent a car and for days or hours</center></p>
+                            <form> <ul>
+								
+							   <div class="territory_div" id="territory_div">Territory:
+								<select name="territory" class="required-entry" id="territory" onclick="location()">
+									<option value="">Select Territory</option>
+									<option value="Alberta">Alberta</option>
+									<option value="British Columbia">British Columbia</option>
+									<option value="Manitoba">Manitoba</option>
+									<option value="New Brunswick">New Brunswick</option>
+									<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+									<option value="Northwest Territories">Northwest Territories</option>
+									<option value="Nova Scotia">Nova Scotia</option>
+									<option value="Nunavut">Nunavut</option>
+									<option value="Ontario">Ontario</option>
+									<option value="Prince Edward Island">Prince Edward Island</option>
+									<option value="Quebec">Quebec</option>
+									<option value="Yukon">Yukon</option>
+									<option value="Saskatchewan">Saskatchewan</option>
+								</select>
+							</div>
+							<div class="city_div" id="city_div">City:
+								<select name="city" id="city" >
+									<option value="">Select City</option>
+								</select>
+								<script >
+									console.log("Here1");
+									function location()
+									{
+										console.log("Here2");
+										var list1 = document.getElementById("territory");
+										var list2 = document.getElementById("city");
+										var SelValue = list1.options[list1.selectedIndex].value;
+										
+											if (SelValue=='Alberta')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Airdrie","Airdrie");
+												list2.options[2]=new Option("Beaumont","Beaumont");
+												list2.options[3]=new Option("Brooks","Brooks");
+												list2.options[4]=new Option("Calgary","Calgary");
+												list2.options[5]=new Option("Camrose","Camrose");
+											}
+
+											else if (SelValue=='British Columbia')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Armstrong","Armstrong");
+												list2.options[2]=new Option("Burnaby","Burnaby");
+												list2.options[3]=new Option("Colwood","Colwood");
+												list2.options[4]=new Option("Delta","Delta");
+												list2.options[5]=new Option("Fernie","Fernie");
+											}
+											else if (SelValue=='Manitoba')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Winnipeg","Winnipeg");
+												list2.options[2]=new Option("Brandon","Brandon");
+												list2.options[3]=new Option("Duaphin","Duaphin");
+												list2.options[4]=new Option("Morden","Morden");
+												list2.options[5]=new Option("Winkler","Winkler");
+											}
+											else if (SelValue=='New Brunswick')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Bathurst","Bathurst");
+												list2.options[2]=new Option("Campbellton","Campbellton");
+												list2.options[3]=new Option("Dieppe","Dieppe");
+												list2.options[4]=new Option("Miramichi","Miramichi");
+												list2.options[5]=new Option("Moncton","Moncton");
+											}
+											else if (SelValue=='Newfoundland and Labrador')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Corner Brook","Corner Brook");
+												list2.options[2]=new Option("Mount Pearl","Mount Pearl");
+												list2.options[3]=new Option("St. Jhon's","St. Jhon's");
+											}
+											else if (SelValue=='Northwest Territories')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Yellowknife","Yellowknife");
+											}
+											else if (SelValue=='Nova Scotia')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Halifax","Halifax");
+												list2.options[2]=new Option("Sydney","Sydney");
+												list2.options[3]=new Option("Dartmouth","Dartmouth");
+											}
+											else if (SelValue=='Nunavut')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Iqaluit","Iqaluit");
+											}
+											else if (SelValue=='Ontario')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Ottawa","Ottawa");
+												list2.options[2]=new Option("Toronto","Toronto");
+												list2.options[3]=new Option("Scarborough","Scarborough");
+												list2.options[4]=new Option("Hamilton","Hamilton");
+												list2.options[5]=new Option("Sarnia","Sarnia");
+											}
+											else if (SelValue=='Prince Edward Island')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Charlottetown","Charlottetown");
+												list2.options[2]=new Option("Summerside","Summerside");
+											}
+											else if (SelValue=='Quebec')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Alma","Alma");
+												list2.options[2]=new Option("Chambly","Chambly");
+												list2.options[3]=new Option("Bedford","Bedford");
+												list2.options[4]=new Option("Delson","Delson");
+												list2.options[5]=new Option("Hudson","Hudson");
+											}
+											else if (SelValue=='Yukon')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Whitehorse","Whitehorse");
+											}
+											else if (SelValue=='Saskatchewan')
+											{
+												list2.options.length=0;
+												list2.options[0]=new Option("Select City","");
+												list2.options[1]=new Option("Estevan","Estevan");
+												list2.options[2]=new Option("Melfort","Melfort");
+												list2.options[3]=new Option("Regina","Regina");
+												list2.options[4]=new Option("Saskatoon","Saskatoon");
+												list2.options[5]=new Option("Yorkton","Yorkton");
+											}
+										}
+							   </script>
+							</div>
+                                <li><label>Start Date:</label>
+                                    <input type="datetime-local" id="start" name="trip-start" style="width:200px"></li>
+                                <li><label>End Date: </label>
+                                    <input type="datetime-local" id="end" name="trip-end" style="width:200px"></li>
+                            </ul>
+                            <button type="submit" value="Search" class = "btn" style="box-sizing:border-box; margin:30px;" formaction="login.html">Search</button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+                 </div>
+
+                            <img src="./static/image/car.jpg" alt="safety" style="margin:50px 10px; float:right;" width="500" height="300">
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid content">
+    <div class="row">
+        <div class="col" id="banner">
+            <div class="col" id="rental" style="margin-left:300px;"> <br>
+                <div class="row"> <br>
+                    <div class="col" style="width:900px;" > <br> <br>
+                        <div class="panel"> <br>
+                            <div class="panel-heading"><center><b style="color:black;">Sanitized and Safe Cars</b></center></div>
+
+                            <img src="./static/image/s1.jpg" alt="safety" style="margin:10px 50px" width="200" height="100">
+                            <img src="./static/image/s2.jpg" alt="safety" style="margin:30px" width="200" height="100">
+                            <img src="./static/image/s3.jpg" alt="safety" style="margin:30px 20px" width="200" height="100">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid content">
+    <div class="row">
+        <div class="col" id="banner"  >
+            <div class="col" id="rental"  style="margin-left:300px;"> <br>
+                <div class="row"> <br>
+                    <div class="col" style="width:900px;"> <br> <br>
+                        <div class="panel"> <br>
+                            <div class="panel-heading"><center><b style="color:black;">How it Works</b></center></div>
+
+                            <span class="fa fa-credit-card fa-5x" aria-hidden="true"> &emsp; <br> <h4>Book and Pay</h4></span>
+                            <span class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">&emsp;</span>
+                            <span class="fa fa-car fa-5x" aria-hidden="true">&emsp;<br> <h4>Receive</h4></span>
+                            <span class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">&emsp;</span>
+                            <span class="fa fa-road fa-5x" aria-hidden="true">&emsp; <br> <h4>Enjoy Driving</h4></span>
+                            <span class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">&emsp;</span>
+                            <span class="fa fa-reply fa-5x" aria-hidden="true">&emsp; <br> <h4>Return at preferred Location</h4></span>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
