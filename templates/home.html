@@ -15,12 +15,12 @@
                     <div class="col-sm-12 col-lg-12 col"> <br> <br>
                         <div class="panel"> <br>
                             <div class="panel-heading"><center><b style="color:black;">Rentals</b></center></div>
-                            <p><center>Rent a car and for days or hours</center></p>
-                            <form> <ul>
+                            <p><center>Rent a car and pay for days or hours</center></p>
+                            <form>
 								
 							   <div class="territory_div" id="territory_div">Territory:
-								<select name="territory" class="required-entry" id="territory" onclick="location()">
-									<option value="">Select Territory</option>
+								<select name="territory" class="required-entry" id="territory" onclick="location1()">
+									<option value="" selected="selected">Select Territory</option>
 									<option value="Alberta">Alberta</option>
 									<option value="British Columbia">British Columbia</option>
 									<option value="Manitoba">Manitoba</option>
@@ -42,7 +42,7 @@
 								</select>
 								<script >
 									console.log("Here1");
-									function location()
+									function location1()
 									{
 										console.log("Here2");
 										var list1 = document.getElementById("territory");
@@ -164,11 +164,43 @@
 										}
 							   </script>
 							</div>
-                                <li><label>Start Date:</label>
-                                    <input type="datetime-local" id="start" name="trip-start" style="width:200px"></li>
-                                <li><label>End Date: </label>
-                                    <input type="datetime-local" id="end" name="trip-end" style="width:200px"></li>
-                            </ul>
+					<script>
+						function duration(){
+    						var value = document.getElementById("rentDuration").value;
+   						//document.getElementsByClassName("inputBox").hide(); 
+    						console.log(value);
+    						if (value == "days")
+							{
+							console.log("here5");
+        						document.getElementById("days").style.display = 'block';
+        						document.getElementById("hours").style.display = 'none';
+							}
+    						else if (value == "hours")
+							{console.log("here6");
+        						document.getElementById("hours").style.display = 'block';
+        						document.getElementById("days").style.display = 'none';}
+    						}	
+					</script>
+					<label>Rent duration:</label>
+					<select id="rentDuration" onclick="duration();">
+					<option value="" selected="selected">Select your duration type</option>
+					<option value="days">Days</option>
+					<option value="hours">Hours</option>
+					</select>
+
+					<div id="days" class="inputBox">	
+                            		<label>Start Date:</label>
+                                    	<input type="date" id="start" name="trip-start" style="width:200px">
+                                	<label>End Date: </label>
+                                    	<input type="date" id="end" name="trip-end" style="width:200px">
+                            		</div>
+					<div id="hours" class="inputBox">
+					<label>Start Time:</label>
+					<input type="hours" id="start" name="trip-start" style="width:200px">
+					<label>End Time:</label>
+					<input type="hours" id="end" name="trip-end" style="width:200px">
+					</div>
+
                             <button type="submit" value="Search" class = "btn" style="box-sizing:border-box; margin:30px;" formaction="login.html">Search</button>
                             </form>
 
@@ -178,61 +210,11 @@
                 </div>
                  </div>
 
-                            <img src="./static/image/car.jpg" alt="safety" style="margin:50px 10px; float:right;" width="500" height="300">
+                          
 
         </div>
     </div>
 
 </div>
 
-<div class="container-fluid content">
-    <div class="row">
-        <div class="col" id="banner">
-            <div class="col" id="rental" style="margin-left:300px;"> <br>
-                <div class="row"> <br>
-                    <div class="col" style="width:900px;" > <br> <br>
-                        <div class="panel"> <br>
-                            <div class="panel-heading"><center><b style="color:black;">Sanitized and Safe Cars</b></center></div>
-
-                            <img src="./static/image/s1.jpg" alt="safety" style="margin:10px 50px" width="200" height="100">
-                            <img src="./static/image/s2.jpg" alt="safety" style="margin:30px" width="200" height="100">
-                            <img src="./static/image/s3.jpg" alt="safety" style="margin:30px 20px" width="200" height="100">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<div class="container-fluid content">
-    <div class="row">
-        <div class="col" id="banner"  >
-            <div class="col" id="rental"  style="margin-left:300px;"> <br>
-                <div class="row"> <br>
-                    <div class="col" style="width:900px;"> <br> <br>
-                        <div class="panel"> <br>
-                            <div class="panel-heading"><center><b style="color:black;">How it Works</b></center></div>
-
-                            <span class="fa fa-credit-card fa-5x" aria-hidden="true"> &emsp; <br> <h4>Book and Pay</h4></span>
-                            <span class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">&emsp;</span>
-                            <span class="fa fa-car fa-5x" aria-hidden="true">&emsp;<br> <h4>Receive</h4></span>
-                            <span class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">&emsp;</span>
-                            <span class="fa fa-road fa-5x" aria-hidden="true">&emsp; <br> <h4>Enjoy Driving</h4></span>
-                            <span class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">&emsp;</span>
-                            <span class="fa fa-reply fa-5x" aria-hidden="true">&emsp; <br> <h4>Return at preferred Location</h4></span>
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
 {% endblock %}

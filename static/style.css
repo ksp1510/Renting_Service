@@ -21,6 +21,8 @@ body, html {
     width: 100%;
 }
 
+
+
 #container {
   /* The image used */
   background-image: url("./image/bg7.jpg");
@@ -47,6 +49,10 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.inputBox {
+    display: none;
 }
 
 #try{
